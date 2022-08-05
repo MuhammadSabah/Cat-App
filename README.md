@@ -1,5 +1,7 @@
 # architecture_test
 
+A small app for learning architecture and how to organize your folder structure.
+
 A new Flutter project.
 
 ## Getting Started
