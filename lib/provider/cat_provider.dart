@@ -13,14 +13,14 @@ class CatProvider extends ChangeNotifier {
     return _streamController.stream;
   }
 
-  Future<void> getThirtyRandomPhoto() async {
-    for (int i = 0; i < 30; i++) {
+  Future<void> getFifteenRandomPhoto() async {
+    for (int i = 0; i < 15; i++) {
       final catHelperResult = await _helper.catData();
       _streamController.add(catHelperResult);
     }
   }
 
   void refreshGrid() {
-    getThirtyRandomPhoto();
+    getFifteenRandomPhoto();
   }
 }

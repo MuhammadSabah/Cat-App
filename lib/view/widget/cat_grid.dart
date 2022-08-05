@@ -22,7 +22,7 @@ class _CatGridState extends State<CatGrid> with AfterLayoutMixin {
   @override
   void afterFirstLayout(BuildContext context) {
     final provider = Provider.of<CatProvider>(context, listen: false);
-    provider.getThirtyRandomPhoto();
+    provider.getFifteenRandomPhoto();
     provider.catPhotoStream.listen((snapshot) {
       snapshot.fold(
         (l) {
@@ -82,6 +82,7 @@ class _CatGridState extends State<CatGrid> with AfterLayoutMixin {
                 child: CircularProgressIndicator(),
               )
             : StaggeredGridView.countBuilder(
+                physics: const BouncingScrollPhysics(),
                 crossAxisCount: 4,
                 staggeredTileBuilder: (index) => catPhotoTiles[index],
                 itemCount: catPhotos.length,
